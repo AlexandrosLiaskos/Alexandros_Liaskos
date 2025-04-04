@@ -1,0 +1,108 @@
+<!-- File: components/projects.html -->
+<div> <!-- Content wrapper - AOS applied by loadComponents.js -->
+    <h2 class="text-2xl font-bold font-heading text-[var(--accent-cyan)] mb-6 flex items-center gap-3">
+        <i class="fas fa-code-branch fa-fw"></i>
+        Projects
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Project Card: Obsidian Web Scraper -->
+        <div class="bg-slate-800/40 p-5 rounded-lg border border-slate-700/50 hover:border-[var(--accent-cyan)]/50 transition-all duration-300 shadow-sm hover:shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay="250"> <!-- Adjusted delay -->
+            <div class="flex justify-between items-start mb-2">
+               <h3 class="text-lg font-semibold text-slate-100 hover:text-[var(--accent-cyan)] transition-colors duration-200">
+                  <a href="https://github.com/AlexandrosLiaskos/obsidian-scraper" target="_blank" rel="noopener noreferrer" class="link-base">
+                       Obsidian Web Scraper
+                  </a>
+               </h3>
+                <span class="text-xs font-medium text-[var(--accent-cyan)] bg-cyan-900/40 px-2 py-0.5 rounded-full">Active</span>
+           </div>
+           <p class="text-slate-400 text-sm mb-4 flex-grow">
+               Tools to scrape web content (via Readability & Turndown) into Markdown for Obsidian vaults. Supports URL discovery, batch processing, custom templates, and functions as an MCP server.
+           </p>
+            <div class="mt-auto border-t border-slate-700/50 pt-3 flex justify-between items-center">
+               <!-- Tech Stack Icons -->
+               <div class="flex space-x-2 items-center text-slate-500">
+                    <i class="fa-brands fa-node-js text-lg" title="Node.js"></i>
+                    <i class="fa-brands fa-js text-lg" title="JavaScript"></i>
+                    <i class="fa-solid fa-terminal text-lg" title="CLI"></i>
+                    <i class="fa-solid fa-file-alt text-lg" title="Markdown/Obsidian Integration"></i> <!-- Generic file icon -->
+               </div>
+               <!-- Links -->
+               <div class="flex space-x-3">
+                   <a href="https://github.com/AlexandrosLiaskos/obsidian-scraper" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-[var(--accent-cyan)] transition-colors" title="View on GitHub">
+                       <i class="fab fa-github fa-lg"></i>
+                   </a>
+                   <a href="https://www.npmjs.com/package/obsidian-web-scraper" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-[var(--accent-cyan)] transition-colors" title="View on npm">
+                       <i class="fab fa-npm fa-lg"></i>
+                   </a>
+               </div>
+           </div>
+       </div>
+
+        <!-- Project Card: Awesome Wallpapers -->
+        <div class="bg-slate-800/40 p-5 rounded-lg border border-slate-700/50 hover:border-[var(--accent-cyan)]/50 transition-all duration-300 shadow-sm hover:shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay="200"> <!-- Adjusted delay -->
+             <div class="flex justify-between items-start mb-2">
+                <h3 class="text-lg font-semibold text-slate-100 hover:text-[var(--accent-cyan)] transition-colors duration-200">
+                   <a href="https://github.com/AlexandrosLiaskos/Awesome_Wallpapers" target="_blank" rel="noopener noreferrer" class="link-base">
+                        Awesome Wallpapers
+                   </a>
+                </h3>
+                 <span class="text-xs font-medium text-[var(--accent-cyan)] bg-cyan-900/40 px-2 py-0.5 rounded-full">Active</span>
+            </div>
+            <p class="text-slate-400 text-sm mb-4 flex-grow">
+                Interactive web app for browsing/searching/downloading wallpapers. Built with Vue.js & Tailwind CSS, featuring a distinct neon teal aesthetic. Includes advanced search with tag filtering.
+            </p>
+             <div class="mt-auto border-t border-slate-700/50 pt-3 flex justify-between items-center">
+                <!-- Tech Stack Icons -->
+                <div class="flex space-x-2 items-center text-slate-500">
+                     <i class="fa-brands fa-vuejs text-lg" title="Vue.js 3"></i>
+                     <i class="fa-brands fa-css3-alt text-lg" title="Tailwind CSS"></i>
+                     <i class="fa-solid fa-file-code text-lg" title="JSON Data"></i> <!-- Icon for JSON -->
+                </div>
+                <!-- Links -->
+                <div class="flex space-x-3">
+                    <a href="https://github.com/AlexandrosLiaskos/Awesome_Wallpapers" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-[var(--accent-cyan)] transition-colors" title="View on GitHub">
+                        <i class="fab fa-github fa-lg"></i>
+                    </a>
+                    <a href="https://alexandrosliaskos.github.io/Awesome_Wallpapers/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-[var(--accent-cyan)] transition-colors" title="Visit Live Demo">
+                        <i class="fas fa-link fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Card: HGS Website -->
+         <div class="bg-slate-800/40 p-5 rounded-lg border border-slate-700/50 hover:border-[var(--accent-cyan)]/50 transition-all duration-300 shadow-sm hover:shadow-lg flex flex-col" data-aos="fade-up" data-aos-delay="300"> <!-- Adjusted delay -->
+             <div class="flex justify-between items-start mb-2">
+                <h3 class="text-lg font-semibold text-slate-100 hover:text-[var(--accent-cyan)] transition-colors duration-200">
+                   <a href="https://hgs-web.github.io/HGS/" target="_blank" rel="noopener noreferrer" class="link-base">
+                        HGS Website
+                   </a>
+                </h3>
+                 <span class="text-xs font-medium text-[var(--accent-cyan)] bg-cyan-900/40 px-2 py-0.5 rounded-full">Active</span>
+            </div>
+            <p class="text-slate-400 text-sm mb-4 flex-grow">
+                Development and maintenance of the official Hellenic Geographical Society (HGS) website, built with VitePress.
+            </p>
+             <div class="mt-auto border-t border-slate-700/50 pt-3 flex justify-between items-center">
+                <!-- Tech Stack Icons -->
+                <div class="flex space-x-2 items-center text-slate-500">
+                     <i class="fa-brands fa-vuejs text-lg" title="Vue.js (via VitePress)"></i>
+                     <i class="fa-brands fa-markdown text-lg" title="Markdown"></i>
+                     <i class="fa-brands fa-html5 text-lg" title="HTML"></i>
+                     <i class="fa-brands fa-css3-alt text-lg" title="CSS"></i>
+                </div>
+                <!-- Links -->
+                <div class="flex space-x-3">
+                     <a href="https://github.com/HGS-web/HGS/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-[var(--accent-cyan)] transition-colors" title="View on GitHub">
+                        <i class="fab fa-github fa-lg"></i>
+                    </a>
+                     <a href="https://hgs-web.github.io/HGS/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-[var(--accent-cyan)] transition-colors" title="Visit Website">
+                        <i class="fas fa-link fa-lg"></i> <!-- Changed icon to link -->
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End Projects Grid -->
+</div>
