@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'projects-placeholder', path: 'components/projects.html' },
         { id: 'publications-placeholder', path: 'components/publications.html' },
         { id: 'skills-placeholder', path: 'components/skills.html' },
+        { id: 'online-courses-placeholder', path: 'components/online_courses.html' },
         { id: 'international-placeholder', path: 'components/international.html' },
         { id: 'volunteering-placeholder', path: 'components/volunteering.html' },
         { id: 'conferences-placeholder', path: 'components/conferences.html' },
