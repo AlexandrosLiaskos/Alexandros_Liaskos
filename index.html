@@ -121,6 +121,13 @@
             --skill-go-hover-border: var(--skill-go-hover-text);
         }
 
+        html {
+            font-size: 16px; /* Explicitly set base font size */
+            -webkit-text-size-adjust: 100%; /* Prevent font scaling on mobile Safari */
+            -moz-text-size-adjust: 100%; /* Prevent font scaling on mobile Firefox */
+            text-size-adjust: 100%; /* Standard property */
+        }
+
         body {
              background: linear-gradient(160deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-end) 100%),
                         url('https://raw.githubusercontent.com/AlexandrosLiaskos/Wallpapers/f89d80dc1c1620cb87bdb5fa3d90cfd082b19b03/313502425_1185576495381182_991235797412716016_n.jpg') no-repeat center center fixed;
