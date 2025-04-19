@@ -122,10 +122,22 @@
         }
 
         html {
-            font-size: 16px; /* Explicitly set base font size */
-            -webkit-text-size-adjust: 100%; /* Prevent font scaling on mobile Safari */
-            -moz-text-size-adjust: 100%; /* Prevent font scaling on mobile Firefox */
-            text-size-adjust: 100%; /* Standard property */
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        /* Reduce default section padding */
+        .cv-section {
+            padding: 1.25rem; /* Tailwind p-5 */
+            /* Or even smaller: padding: 1rem; */ /* Tailwind p-4 */
+        }
+
+        /* Adjust sidebar spacing */
+        .sidebar {
+            space-y: 1.5rem; /* Tailwind space-y-6 */
+            /* Or even smaller: space-y: 1rem; */ /* Tailwind space-y-4 */
         }
 
         body {
@@ -140,16 +152,16 @@
         /* Base Section Styling */
         .cv-section {
             background-color: var(--card-bg);
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(10px); /* Slightly reduce blur */
             border-radius: 0.75rem;
-            padding: 1.5rem;
+            /* padding: 1.5rem; */ /* Default padding moved to separate rule above */
             border: 1px solid var(--card-ring);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, padding 0.2s ease; /* Optional: Animate padding change */
         }
 
         .cv-section:hover {
-           transform: translateY(-3px);
+           transform: translateY(-2px); /* Slightly reduce hover effect */
            box-shadow: 0 0 25px -5px rgba(0, 255, 234, 0.15), 0 8px 10px -6px rgba(0, 255, 234, 0.1);
         }
 
@@ -210,6 +222,7 @@
              opacity: 1;
         }
 
+         /* Social Link Styling */
          .social-link {
              display: inline-flex;
              align-items: center;
@@ -365,14 +378,14 @@
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 relative">
 
         <!-- === Sidebar === -->
-        <aside class="lg:col-span-1 lg:sticky lg:top-8 h-fit space-y-8 sidebar">
-            <div id="header-placeholder" class="cv-section"></div>
-            <div id="contact-placeholder" class="cv-section"></div>
-            <div id="languages-placeholder" class="cv-section"></div>
+        <aside class="lg:col-span-1 lg:sticky lg:top-8 h-fit space-y-6 sidebar"> <!-- Adjusted space-y -->
+            <div id="header-placeholder" class="cv-section !p-4 md:!p-5"></div> <!-- Reduced padding for header -->
+            <div id="contact-placeholder" class="cv-section !p-4"></div> <!-- Reduced padding for contact -->
+            <div id="languages-placeholder" class="cv-section !p-4"></div> <!-- Reduced padding for languages -->
         </aside>
 
         <!-- === Main Content Area === -->
-        <main class="lg:col-span-2 space-y-8 main-content">
+        <main class="lg:col-span-2 space-y-6 main-content"> <!-- Reduced from space-y-8 -->
             <div id="education-placeholder"></div>
             <div id="skills-placeholder"></div>
             <div id="experience-placeholder"></div>
