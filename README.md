@@ -2,6 +2,8 @@
 
 This is an interactive, modular CV website for Alexandros P. Liaskos, built with HTML, Tailwind CSS, and JavaScript. It dynamically loads content components to create a smooth, single-page experience.
 
+![image](https://github.com/user-attachments/assets/51f332f2-f50d-4e9f-960f-575325e0c40e)
+
 ## Features
 
 - Responsive design using Tailwind CSS
