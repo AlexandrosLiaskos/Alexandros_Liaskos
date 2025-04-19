@@ -26,44 +26,41 @@
     <style>
         /* Define Base Colors and Fonts */
         :root {
-            /* --- Existing Variables --- */
             --bg-gradient-start: rgba(10, 15, 30, 0.7);
             --bg-gradient-mid: rgba(0, 5, 15, 0.85);
             --bg-gradient-end: rgba(0, 0, 0, 0.95);
             --accent-cyan: #00FFEA;
             --accent-cyan-dark: #00b3a4;
-            --text-light: #e2e8f0; /* slate-200 */
-            --text-medium: #94a3b8; /* slate-400 */
-            --text-dark: #1e293b;   /* slate-800 */
-            --card-bg: rgba(15, 23, 42, 0.4); /* slate-900 with alpha - Base for cv-section */
-            --card-ring: rgba(0, 255, 234, 0.2); /* Initial border ring */
-            --card-ring-hover: rgba(0, 255, 234, 0.5); /* Hover border ring - Might deprecate if using specific border colors */
+            --text-light: #e2e8f0; 
+            --text-medium: #94a3b8; 
+            --text-dark: #1e293b;   
+            --card-bg: rgba(15, 23, 42, 0.4); 
+            --card-ring: rgba(0, 255, 234, 0.2); 
+            --card-ring-hover: rgba(0, 255, 234, 0.5);
             --font-heading: 'Poppins', sans-serif;
             --font-body: 'Inter', sans-serif;
-            --bg-primary: #0f172a; /* Approximation of body background base (slate-900) for offset */
-
-            /* --- NEW Variables for Education Section & General Use --- */
-            --accent-purple: #a78bfa; /* Tailwind purple-400 */
-            --accent-purple-dim: rgba(167, 139, 250, 0.8); /* purple-400/80 */
-            --accent-cyan-dim: rgba(0, 255, 234, 0.7);    /* --accent-cyan / 70 - for MOOC category */
-            --accent-cyan-tag-bg: rgba(14, 116, 144, 0.4); /* Approximation of cyan-900/30 */
+            --bg-primary: #0f172a; 
+            --accent-purple: #a78bfa; 
+            --accent-purple-dim: rgba(167, 139, 250, 0.8);
+            --accent-cyan-dim: rgba(0, 255, 234, 0.7);  
+            --accent-cyan-tag-bg: rgba(14, 116, 144, 0.4);
 
             /* Card Backgrounds */
-            --card-bg-degree: rgba(30, 41, 59, 0.3); /* slate-800/30 */
-            --card-bg-mooc: rgba(30, 41, 59, 0.4);   /* slate-800/40 */
-            --card-bg-mooc-hover: rgba(30, 41, 59, 0.55); /* slate-800/55 - Slightly darker on hover */
+            --card-bg-degree: rgba(30, 41, 59, 0.3); 
+            --card-bg-mooc: rgba(30, 41, 59, 0.4);   
+            --card-bg-mooc-hover: rgba(30, 41, 59, 0.55);
 
             /* Borders */
-            --border-color-soft: rgba(51, 65, 85, 0.5); /* slate-700/50 */
-            --hover-border-cyan: rgba(0, 255, 234, 0.5); /* --accent-cyan / 50 */
-            --hover-border-purple: rgba(167, 139, 250, 0.5); /* --accent-purple / 50 - If needed for purple cards */
+            --border-color-soft: rgba(51, 65, 85, 0.5); 
+            --hover-border-cyan: rgba(0, 255, 234, 0.5); 
+            --hover-border-purple: rgba(167, 139, 250, 0.5); 
 
             /* Text */
-            --text-heading-main: var(--accent-cyan); /* Section titles */
-            --text-heading-sub: var(--text-light);   /* Card titles, Sub-section titles (slate-100/200) */
-            --text-body-primary: var(--text-light); /* Main paragraph text (slate-200/300) */
-            --text-body-secondary: var(--text-medium);/* Subdued text, italics (slate-400) */
-            --text-muted: #64748b;                 /* slate-500 - Can be used for less important info */
+            --text-heading-main: var(--accent-cyan); 
+            --text-heading-sub: var(--text-light);  
+            --text-body-primary: var(--text-light);
+            --text-body-secondary: var(--text-medium);
+            --text-muted: #64748b;                 
 
             /* Focus Ring */
             --focus-ring-color: var(--accent-cyan);
@@ -72,81 +69,85 @@
             --font-heading: 'Poppins', sans-serif;
             --font-body: 'Inter', sans-serif;
 
-            /* --- NEW Skill Tag Colors --- */
-            /* Base/Default */
-            --skill-bg-default: rgba(51, 65, 85, 0.45);   /* slate-700/45 - Slightly less opaque */
-            --skill-text-default: var(--text-medium);    /* slate-400 */
-            --skill-border-default: rgba(71, 85, 105, 0.4); /* slate-600/40 - Softer border */
-            --skill-hover-bg-default: rgba(0, 255, 234, 0.1);  /* accent-cyan/10 */
+            /* Skill Tag Colors */
+            --skill-bg-default: rgba(51, 65, 85, 0.45);  
+            --skill-text-default: var(--text-medium);    
+            --skill-border-default: rgba(71, 85, 105, 0.4); 
+            --skill-hover-bg-default: rgba(0, 255, 234, 0.1);  
             --skill-hover-text-default: var(--accent-cyan);
-            --skill-hover-border-default: rgba(0, 255, 234, 0.4); /* accent-cyan/40 */
+            --skill-hover-border-default: rgba(0, 255, 234, 0.4); 
 
             /* Python Category */
-            --skill-py-bg: rgba(14, 116, 144, 0.3); /* cyan-800/30 */
-            --skill-py-text: #67e8f9; /* cyan-300 */
-            --skill-py-border: rgba(103, 232, 249, 0.3); /* cyan-300/30 */
-            --skill-py-hover-bg: rgba(22, 78, 99, 0.6); /* cyan-900/60 */
-            --skill-py-hover-text: #cffafe; /* cyan-100 */
+            --skill-py-bg: rgba(14, 116, 144, 0.3); 
+            --skill-py-text: #67e8f9; 
+            --skill-py-border: rgba(103, 232, 249, 0.3); 
+            --skill-py-hover-bg: rgba(22, 78, 99, 0.6); 
+            --skill-py-hover-text: #cffafe;
             --skill-py-hover-border: var(--skill-py-text);
 
             /* JavaScript Category */
-            --skill-js-bg: rgba(5, 150, 105, 0.25); /* emerald-600/25 */
-            --skill-js-text: #6ee7b7; /* emerald-300 */
-            --skill-js-border: rgba(110, 231, 183, 0.3); /* emerald-300/30 */
-            --skill-js-hover-bg: rgba(6, 78, 59, 0.6); /* emerald-900/60 */
-            --skill-js-hover-text: #a7f3d0; /* emerald-200 */
+            --skill-js-bg: rgba(5, 150, 105, 0.25); 
+            --skill-js-text: #6ee7b7; 
+            --skill-js-border: rgba(110, 231, 183, 0.3); 
+            --skill-js-hover-bg: rgba(6, 78, 59, 0.6);
+            --skill-js-hover-text: #a7f3d0; 
             --skill-js-hover-border: var(--skill-js-text);
 
             /* SSG Category */
-            --skill-ssg-bg: rgba(79, 70, 229, 0.2); /* indigo-600/20 */
-            --skill-ssg-text: #a5b4fc; /* indigo-300 */
-            --skill-ssg-border: rgba(165, 180, 252, 0.3); /* indigo-300/30 */
-            --skill-ssg-hover-bg: rgba(49, 46, 129, 0.6); /* indigo-900/60 */
-            --skill-ssg-hover-text: #c7d2fe; /* indigo-200 */
+            --skill-ssg-bg: rgba(79, 70, 229, 0.2); 
+            --skill-ssg-text: #a5b4fc; 
+            --skill-ssg-border: rgba(165, 180, 252, 0.3); 
+            --skill-ssg-hover-bg: rgba(49, 46, 129, 0.6); 
+            --skill-ssg-hover-text: #c7d2fe; 
             --skill-ssg-hover-border: var(--skill-ssg-text);
 
             /* CSS Category */
-            --skill-css-bg: rgba(225, 29, 72, 0.2); /* rose-600/20 */
-            --skill-css-text: #fda4af; /* rose-300 */
-            --skill-css-border: rgba(253, 164, 175, 0.3); /* rose-300/30 */
-            --skill-css-hover-bg: rgba(136, 19, 55, 0.6); /* rose-900/60 */
-            --skill-css-hover-text: #fecdd3; /* rose-200 */
+            --skill-css-bg: rgba(225, 29, 72, 0.2); 
+            --skill-css-text: #fda4af; 
+            --skill-css-border: rgba(253, 164, 175, 0.3); 
+            --skill-css-hover-bg: rgba(136, 19, 55, 0.6);
+            --skill-css-hover-text: #fecdd3;
             --skill-css-hover-border: var(--skill-css-text);
 
-             /* Bash/Shell Category (New) */
-            --skill-bash-bg: rgba(101, 163, 13, 0.25); /* lime-700/25 */
-            --skill-bash-text: #bef264; /* lime-300 */
-            --skill-bash-border: rgba(190, 242, 100, 0.3); /* lime-300/30 */
-            --skill-bash-hover-bg: rgba(54, 83, 20, 0.6); /* lime-900/60 */
-            --skill-bash-hover-text: #f7fee7; /* lime-100 */
+             /* Bash/Shell Category */
+            --skill-bash-bg: rgba(101, 163, 13, 0.25);
+            --skill-bash-text: #bef264; 
+            --skill-bash-border: rgba(190, 242, 100, 0.3); 
+            --skill-bash-hover-bg: rgba(54, 83, 20, 0.6); 
+            --skill-bash-hover-text: #f7fee7; 
             --skill-bash-hover-border: var(--skill-bash-text);
+
+            --skill-go-bg: rgba(20, 138, 164, 0.25); 
+            --skill-go-text: #76d7ea;           
+            --skill-go-border: rgba(118, 215, 234, 0.3); 
+            --skill-go-hover-bg: rgba(17, 94, 111, 0.6); 
+            --skill-go-hover-text: #b3ecf7;  
+            --skill-go-hover-border: var(--skill-go-hover-text); 
         }
 
         body {
-            /* Enhanced Background - Consider adding particles.js later */
              background: linear-gradient(160deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-end) 100%),
                         url('https://raw.githubusercontent.com/AlexandrosLiaskos/Wallpapers/f89d80dc1c1620cb87bdb5fa3d90cfd082b19b03/313502425_1185576495381182_991235797412716016_n.jpg') no-repeat center center fixed;
             background-size: cover;
             color: var(--text-light);
             font-family: var(--font-body);
-            line-height: 1.7; /* Slightly increased for readability */
+            line-height: 1.7;
         }
 
-        /* Base Section Styling (Applied via component structure) */
+        /* Base Section Styling */
         .cv-section {
             background-color: var(--card-bg);
             backdrop-filter: blur(12px);
-            border-radius: 0.75rem; /* rounded-xl */
-            padding: 1.5rem; /* p-6 */
-            border: 1px solid var(--card-ring); /* Replaces ring */
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+            border-radius: 0.75rem; 
+            padding: 1.5rem; 
+            border: 1px solid var(--card-ring); 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
             transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .cv-section:hover {
-           /* border-color: var(--card-ring-hover); */
            transform: translateY(-3px);
-           box-shadow: 0 0 25px -5px rgba(0, 255, 234, 0.15), 0 8px 10px -6px rgba(0, 255, 234, 0.1); /* Cyan glow */
+           box-shadow: 0 0 25px -5px rgba(0, 255, 234, 0.15), 0 8px 10px -6px rgba(0, 255, 234, 0.1); 
         }
 
         /* Custom scrollbar */
@@ -161,20 +162,19 @@
             color: var(--text-light);
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
         }
-        /* Specific heading styles defined via Tailwind */
 
         p {
-            color: var(--text-medium); /* Default P color slightly softer */
+            color: var(--text-medium); 
         }
-        p strong, p b { /* Ensure bold text within paragraphs is lighter */
+        p strong, p b { 
             color: var(--text-light);
-            font-weight: 600; /* Adjust if needed */
+            font-weight: 600;
         }
 
         a {
             color: var(--accent-cyan);
             transition: color 0.2s ease, opacity 0.2s ease;
-            outline: none; /* Remove default outline */
+            outline: none; 
         }
         a:hover, a:focus {
             color: var(--accent-cyan-dark);
@@ -197,7 +197,7 @@
             color: var(--accent-cyan);
         }
         .link-external::after {
-            font-family: "Font Awesome 6 Free"; content: "\f35d"; /* external link icon */
+            font-family: "Font Awesome 6 Free"; content: "\f35d";
             font-weight: 900; font-size: 0.75em; opacity: 0.7; transition: opacity 0.2s ease;
         }
         .link-external:hover {
@@ -206,31 +206,29 @@
         .link-external:hover::after {
              opacity: 1;
         }
-         /* Add specific classes to links in components to control icon */
 
          .social-link {
              display: inline-flex;
              align-items: center;
-             gap: 0.5rem; /* Increased gap */
+             gap: 0.5rem; 
              padding: 0.3rem 0.8rem;
-             border-radius: 9999px; /* rounded-full */
-             background-color: rgba(30, 41, 59, 0.6); /* slate-800/60 */
+             border-radius: 9999px; 
+             background-color: rgba(30, 41, 59, 0.6); 
              color: var(--text-medium);
-             font-size: 0.875rem; /* text-sm */
+             font-size: 0.875rem; 
              transition: background-color 0.2s ease, color 0.2s ease;
          }
-          .social-link i { /* Style icon within social link */
+          .social-link i { 
               color: var(--accent-cyan);
               transition: color 0.2s ease;
           }
           .social-link:hover {
-              background-color: rgba(0, 255, 234, 0.1); /* accent-cyan/10 */
+              background-color: rgba(0, 255, 234, 0.1); 
               color: var(--text-light);
           }
          .social-link:hover i {
              color: var(--accent-cyan);
          }
-
 
         /* Utility for cyan text */
         .text-accent { color: var(--accent-cyan); }
@@ -246,22 +244,22 @@
         @page { size: A4; margin: 0; }
         @media print {
             html, body {
-                width: 210mm; height: auto; margin: 0; padding: 15mm; /* Adjusted padding */
-                background: #020617 !important; /* Dark solid for print */
+                width: 210mm; height: auto; margin: 0; padding: 15mm; 
+                background: #020617 !important;
                 color: #e2e8f0 !important;
                 -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;
             }
             .cv-section {
                  page-break-inside: avoid; break-inside: avoid;
-                 background-color: rgba(15, 23, 42, 0.8) !important; /* Slightly darker solid for print */
+                 background-color: rgba(15, 23, 42, 0.8) !important; 
                  border: 1px solid rgba(0, 255, 234, 0.3) !important;
                  box-shadow: none !important;
                  backdrop-filter: none !important;
             }
             .no-print { display: none; }
-            .sidebar { display: none; } /* Hide sidebar in print */
-            .main-content { grid-column: span 3 / span 3 !important; } /* Main content takes full width */
-            a::after { content: "" !important; } /* Remove external link icons */
+            .sidebar { display: none; } 
+            .main-content { grid-column: span 3 / span 3 !important; } 
+            a::after { content: "" !important; } 
             a { color: #00FFEA !important; text-decoration: none; }
             * {
                 -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;
@@ -270,28 +268,26 @@
         }
 
         /* Skill Tag Styling */
-        /* Replace the old .skill-tag rule with this enhanced version */
         .skill-tag {
-            display: inline-flex; /* Align icon if added later */
+            display: inline-flex; 
             align-items: center;
             background-color: var(--skill-bg-default);
             color: var(--skill-text-default);
-            font-size: 0.8rem; /* text-xs slightly larger */
-            font-weight: 500; /* font-medium */
-            padding: 0.3rem 0.8rem; /* Adjusted padding */
-            border-radius: 0.375rem; /* rounded-md */
+            font-size: 0.8rem; 
+            font-weight: 500; 
+            padding: 0.3rem 0.8rem;
+            border-radius: 0.375rem; 
             border: 1px solid var(--skill-border-default);
-            /* Removed shadow for a flatter look, matching other elements better */
             transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, transform 0.15s ease-out;
             cursor: default;
-            white-space: nowrap; /* Prevent wrapping */
+            white-space: nowrap; 
         }
 
         .skill-tag:hover {
             background-color: var(--skill-hover-bg-default);
             color: var(--skill-hover-text-default);
             border-color: var(--skill-hover-border-default);
-            transform: scale(1.03); /* Slightly larger scale on hover */
+            transform: scale(1.03);
         }
 
         /* Specific category classes */
@@ -339,7 +335,6 @@
             border-color: var(--skill-css-hover-border);
         }
 
-        /* New Bash Style */
         .skill-tag-bash {
             background-color: var(--skill-bash-bg);
             color: var(--skill-bash-text);
@@ -350,21 +345,27 @@
             color: var(--skill-bash-hover-text);
             border-color: var(--skill-bash-hover-border);
         }
-
-        /* Ensure other styles are not conflicting */
+        .skill-tag-go {
+        background-color: var(--skill-go-bg);
+        color: var(--skill-go-text);
+        border-color: var(--skill-go-border);
+    }
+    .skill-tag-go:hover {
+        background-color: var(--skill-go-hover-bg);
+        color: var(--skill-go-hover-text);
+        border-color: var(--skill-go-hover-border);
+    }
     </style>
 </head>
 <body class="bg-slate-950 min-h-screen p-4 lg:p-8">
 
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 relative">
 
-        <!-- === Sidebar (Sticky on Large Screens) === -->
+        <!-- === Sidebar === -->
         <aside class="lg:col-span-1 lg:sticky lg:top-8 h-fit space-y-8 sidebar">
             <div id="header-placeholder" class="cv-section"></div>
             <div id="contact-placeholder" class="cv-section"></div>
             <div id="languages-placeholder" class="cv-section"></div>
-            <!-- Optional: Add a quick skills overview placeholder here if desired -->
-            <!-- <div id="skills-quick-placeholder" class="cv-section"></div> -->
         </aside>
 
         <!-- === Main Content Area === -->
@@ -381,7 +382,7 @@
             <div id="online-courses-placeholder"></div>
             <div id="military-placeholder"></div>
 
-            <!-- Loading status indicator (optional) -->
+            <!-- Loading status indicator -->
             <div id="loading-status" class="text-center text-cyan-400 p-4 text-sm">Loading CV sections...</div>
         </main>
 
