@@ -24,108 +24,104 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
-        /* Define Base Colors and Fonts */
         :root {
-            --bg-gradient-start: rgba(10, 15, 30, 0.7);
-            --bg-gradient-mid: rgba(0, 5, 15, 0.85);
-            --bg-gradient-end: rgba(0, 0, 0, 0.95);
-            --accent-cyan: #00FFEA;
-            --accent-cyan-dark: #00b3a4;
-            --text-light: #e2e8f0; 
-            --text-medium: #94a3b8; 
-            --text-dark: #1e293b;   
-            --card-bg: rgba(15, 23, 42, 0.4); 
-            --card-ring: rgba(0, 255, 234, 0.2); 
-            --card-ring-hover: rgba(0, 255, 234, 0.5);
-            --font-heading: 'Poppins', sans-serif;
-            --font-body: 'Inter', sans-serif;
-            --bg-primary: #0f172a; 
-            --accent-purple: #a78bfa; 
-            --accent-purple-dim: rgba(167, 139, 250, 0.8);
-            --accent-cyan-dim: rgba(0, 255, 234, 0.7);  
-            --accent-cyan-tag-bg: rgba(14, 116, 144, 0.4);
+            /* Base & Background */
+            --bg-gradient-start: rgba(12, 18, 38, 0.75);
+            --bg-gradient-mid: rgba(5, 10, 25, 0.88);
+            --bg-gradient-end: rgba(2, 5, 15, 0.97);
+            --bg-primary: #0a1022; 
 
-            /* Card Backgrounds */
-            --card-bg-degree: rgba(30, 41, 59, 0.3); 
-            --card-bg-mooc: rgba(30, 41, 59, 0.4);   
-            --card-bg-mooc-hover: rgba(30, 41, 59, 0.55);
-
-            /* Borders */
-            --border-color-soft: rgba(51, 65, 85, 0.5); 
-            --hover-border-cyan: rgba(0, 255, 234, 0.5); 
-            --hover-border-purple: rgba(167, 139, 250, 0.5); 
+            /* Accents */
+            --accent-cyan: #00F0FF;
+            --accent-cyan-dark: #00C0CC;
+            --accent-purple: #B87FFA;
+            --accent-purple-dim: rgba(184, 127, 250, 0.8);
+            --accent-cyan-dim: rgba(0, 240, 255, 0.75);
+            --accent-cyan-tag-bg: rgba(14, 116, 144, 0.45);
 
             /* Text */
+            --text-light: #F1F5F9; 
+            --text-medium: #A0AEC0; 
+            --text-dark: #1A202C;   
             --text-heading-main: var(--accent-cyan); 
             --text-heading-sub: var(--text-light);  
             --text-body-primary: var(--text-light);
             --text-body-secondary: var(--text-medium);
-            --text-muted: #64748b;                 
+            --text-muted: #718096;                 
 
-            /* Focus Ring */
-            --focus-ring-color: var(--accent-cyan);
-            --card-ring: rgba(0, 255, 234, 0.2);
-            --card-ring-hover: rgba(0, 255, 234, 0.5);
+            /* Cards & Borders */
+            --card-bg: rgba(20, 30, 55, 0.5); 
+            --card-ring: rgba(0, 240, 255, 0.2); 
+            --card-ring-hover: rgba(0, 240, 255, 0.55);
+            --card-bg-degree: rgba(35, 45, 70, 0.4); 
+            --card-bg-mooc: rgba(35, 45, 70, 0.5);   
+            --card-bg-mooc-hover: rgba(40, 50, 75, 0.65);
+            --border-color-soft: rgba(60, 75, 100, 0.55); 
+            --hover-border-cyan: rgba(0, 240, 255, 0.6); 
+            --hover-border-purple: rgba(184, 127, 250, 0.6); 
+
+            /* Fonts & Focus */
             --font-heading: 'Poppins', sans-serif;
             --font-body: 'Inter', sans-serif;
+            --focus-ring-color: var(--accent-cyan);
 
-            /* Skill Tag Colors */
-            --skill-bg-default: rgba(51, 65, 85, 0.45);  
+            /* Skill Tag Colors - Default */
+            --skill-bg-default: rgba(70, 85, 110, 0.5);  
             --skill-text-default: var(--text-medium);    
-            --skill-border-default: rgba(71, 85, 105, 0.4); 
-            --skill-hover-bg-default: rgba(0, 255, 234, 0.1);  
+            --skill-border-default: rgba(80, 95, 120, 0.45); 
+            --skill-hover-bg-default: rgba(0, 240, 255, 0.18);  
             --skill-hover-text-default: var(--accent-cyan);
-            --skill-hover-border-default: rgba(0, 255, 234, 0.4); 
+            --skill-hover-border-default: rgba(0, 240, 255, 0.45); 
 
             /* Python Category (Blue) */
-            --skill-py-bg: rgba(52, 152, 219, 0.2); 
-            --skill-py-text: #5DADE2;              
-            --skill-py-border: rgba(93, 173, 226, 0.4); 
-            --skill-py-hover-bg: rgba(41, 128, 185, 0.6); 
-            --skill-py-hover-text: #A9CCE3;      
+            --skill-py-bg: rgba(52, 152, 219, 0.28); 
+            --skill-py-text: #6DC7F9;              
+            --skill-py-border: rgba(93, 173, 226, 0.45); 
+            --skill-py-hover-bg: rgba(41, 128, 185, 0.75); 
+            --skill-py-hover-text: #BADDFF;      
             --skill-py-hover-border: var(--skill-py-hover-text); 
 
             /* JavaScript Category (Yellow) */
-            --skill-js-bg: rgba(244, 208, 63, 0.2);  
-            --skill-js-text: #F4D03F;
-            --skill-js-border: rgba(247, 220, 111, 0.4);
-            --skill-js-hover-bg: rgba(183, 149, 11, 0.6); 
-            --skill-js-hover-text: #F8C471;       
+            --skill-js-bg: rgba(244, 208, 63, 0.22);  
+            --skill-js-text: #F8DC75;
+            --skill-js-border: rgba(247, 220, 111, 0.45);
+            --skill-js-hover-bg: rgba(241, 196, 15, 0.6); 
+            --skill-js-hover-text: #FBEAA0;       
             --skill-js-hover-border: var(--skill-js-hover-text);
 
             /* SSG Category (Orange) */
-            --skill-ssg-bg: rgba(243, 156, 18, 0.2);  
-            --skill-ssg-text: #F39C12;       
-            --skill-ssg-border: rgba(245, 176, 65, 0.4); 
-            --skill-ssg-hover-bg: rgba(186, 104, 3, 0.6); 
-            --skill-ssg-hover-text: #F5B041;       
+            --skill-ssg-bg: rgba(230, 126, 34, 0.22);  
+            --skill-ssg-text: #F7B24A;       
+            --skill-ssg-border: rgba(245, 176, 65, 0.45); 
+            --skill-ssg-hover-bg: rgba(211, 84, 0, 0.65); 
+            --skill-ssg-hover-text: #FADDAA;       
             --skill-ssg-hover-border: var(--skill-ssg-hover-text);
 
-            /* CSS Category (Blue) */
-            --skill-css-bg: rgba(93, 173, 226, 0.2); 
-            --skill-css-text: #85C1E9;        
-            --skill-css-border: rgba(133, 193, 233, 0.4); 
-            --skill-css-hover-bg: rgba(21, 67, 96, 0.6); 
-            --skill-css-hover-text: #AED6F1;       
+            /* CSS Category (Blue - distinct) */
+            --skill-css-bg: rgba(41, 128, 185, 0.3); 
+            --skill-css-text: #70B8E8;        
+            --skill-css-border: rgba(93, 173, 226, 0.45); 
+            --skill-css-hover-bg: rgba(31, 97, 141, 0.75); 
+            --skill-css-hover-text: #B3D7F0;       
             --skill-css-hover-border: var(--skill-css-hover-text);
 
-            /* Bash/Shell Category (Terminal Green) */
-            --skill-bash-bg: rgba(46, 204, 113, 0.2);  
-            --skill-bash-text: #58D68D;             
-            --skill-bash-border: rgba(88, 214, 141, 0.4); 
-            --skill-bash-hover-bg: rgba(19, 141, 117, 0.6); 
-            --skill-bash-hover-text: #A9DFBF;         
+            /* Bash/Shell Category (Green) */
+            --skill-bash-bg: rgba(39, 174, 96, 0.22);  
+            --skill-bash-text: #65DDA0;             
+            --skill-bash-border: rgba(88, 214, 141, 0.45); 
+            --skill-bash-hover-bg: rgba(22, 160, 133, 0.65); 
+            --skill-bash-hover-text: #B2E7CA;         
             --skill-bash-hover-border: var(--skill-bash-hover-text);
             
-            /* Go Category ( Light Blue/Cyan) */
-            --skill-go-bg: rgba(20, 138, 164, 0.25); 
-            --skill-go-text: #76d7ea;           
-            --skill-go-border: rgba(118, 215, 234, 0.3); 
-            --skill-go-hover-bg: rgba(17, 94, 111, 0.6); 
-            --skill-go-hover-text: #b3ecf7;  
+            /* Go Category (Teal/Cyan) */
+            --skill-go-bg: rgba(20, 143, 170, 0.3); 
+            --skill-go-text: #7CE0F0;           
+            --skill-go-border: rgba(118, 215, 234, 0.35); 
+            --skill-go-hover-bg: rgba(17, 110, 130, 0.7); 
+            --skill-go-hover-text: #B9F0FA;  
             --skill-go-hover-border: var(--skill-go-hover-text); 
         }
-
+        
         body {
              background: linear-gradient(160deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-end) 100%),
                         url('https://raw.githubusercontent.com/AlexandrosLiaskos/Wallpapers/f89d80dc1c1620cb87bdb5fa3d90cfd082b19b03/313502425_1185576495381182_991235797412716016_n.jpg') no-repeat center center fixed;
