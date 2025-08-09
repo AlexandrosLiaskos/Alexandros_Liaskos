@@ -55,7 +55,7 @@ export function Skills() {
         >
           <h2 className="text-3xl lg:text-4xl font-bold gradient-text">Technical Skills</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive toolkit spanning geospatial analysis, software development, and modern web technologies
+            A toolkit spanning geospatial analysis, software development, and modern web technologies
           </p>
         </motion.div>
 
