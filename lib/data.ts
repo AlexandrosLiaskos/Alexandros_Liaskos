@@ -25,7 +25,7 @@ export const personalInfo = {
     github: "https://github.com/AlexandrosLiaskos",
     linkedin: "https://www.linkedin.com/in/alexandros-liaskos/",
   },
-  bio: "Software engineer and geosciences specialist with a BSc in Geology, undergoing MSc in GIS, years of experience in research of geohazards and satellite imagery analysis, and a dream of participating in Space Exploration by working in the European Space Agency (ESA).",
+  bio: "Software engineer and geosciences specialist with a BSc in Geology, undergoing MSc in GIS, years of experience in research of geohazards, satellite imagery analysis, geoinformatics and web-app development.",
 }
 
 export const education = [
@@ -75,18 +75,21 @@ export const experience = [
     positions: [
       {
         title: "Software Developer",
+        organization: "Independent Contractor",
         description: "Developing algorithms, CLI applications and tools using Python, JavaScript/TypeScript and Bash.",
         period: "2021 – Present",
         status: "current",
       },
       {
         title: "Geospatial Analyst",
+        organization: "Independent Contractor",
         description: "Utilizing GIS software (ArcGIS Pro, QGIS), Python/JavaScript, and satellite imagery (GEE, Copernicus) for geospatial data analysis and software development.",
         period: "2022 – Present",
         status: "current",
       },
       {
         title: "Web Developer",
+        organization: "Independent Contractor",
         description: "Developing web applications using Next.js, Typescript, ShadCN, and SQLite.",
         period: "2024 – Present",
         status: "current",
@@ -158,6 +161,14 @@ export const skills = {
 }
 
 export const projects = [
+  {
+    title: "AEMS",
+    description: "Automated Email Management System with AI-powered classification and data extraction from invoices/receipts. Features Gmail integration, real-time processing, and local-first storage.",
+    techStack: ["NestJS", "React", "TypeScript", "GraphQL", "OpenAI API", "Gmail API", "WebSocket"],
+    githubUrl: "https://github.com/AlexandrosLiaskos/AEMS",
+    status: "active",
+    featured: true,
+  },
   {
     title: "SatShor",
     description: "Satellite-derived shorelines from S2L2AB08 images with subpixel precision and a TUI for acquiring the product-of-interest through CDSE's OData API.",
