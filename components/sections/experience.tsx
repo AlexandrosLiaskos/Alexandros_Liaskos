@@ -8,32 +8,6 @@ import { ExternalLink, MapPin, User, Calendar } from "lucide-react"
 import { motion } from "framer-motion"
 
 export function Experience() {
-  const getCategoryIcon = (category: string) => {
-    switch (category) {
-      case "Research":
-        return "🔬"
-      case "Freelance":
-        return "💻"
-      case "Service Industry":
-        return "🍽️"
-      default:
-        return "💼"
-    }
-  }
-
-  const getCategoryColor = (category: string) => {
-    switch (category) {
-      case "Research":
-        return "from-blue-500/20 to-cyan-500/20 border-blue-500/30"
-      case "Freelance":
-        return "from-green-500/20 to-emerald-500/20 border-green-500/30"
-      case "Service Industry":
-        return "from-purple-500/20 to-pink-500/20 border-purple-500/30"
-      default:
-        return "from-gray-500/20 to-slate-500/20 border-gray-500/30"
-    }
-  }
-
   return (
     <section id="experience" className="section-container">
       <div className="space-y-12">
@@ -64,7 +38,6 @@ export function Experience() {
             >
               {/* Category Header */}
               <div className="flex items-center gap-3">
-                <span className="text-2xl">{getCategoryIcon(category.category)}</span>
                 <h3 className="text-2xl font-bold text-primary">{category.category}</h3>
               </div>
 
@@ -78,7 +51,7 @@ export function Experience() {
                     transition={{ duration: 0.5, delay: positionIndex * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <Card className={`glass-morphism border-l-4 bg-gradient-to-r ${getCategoryColor(category.category)} hover:bg-opacity-80 transition-all duration-300 group`}>
+                    <Card className="glass-morphism hover:bg-card/80 transition-all duration-300 group border-l-4 border-l-primary">
                       <CardHeader>
                         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
                           <div className="space-y-2 flex-1">
