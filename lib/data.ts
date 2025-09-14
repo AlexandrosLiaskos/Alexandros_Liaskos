@@ -58,7 +58,7 @@ export const personalInfo = {
   avatar: "https://avatars.githubusercontent.com/u/128935863?v=4",
   social: {
     github: "https://github.com/AlexandrosLiaskos",
-    linkedin: "https://www.linkedin.com/in/alexandros-liaskos/",
+    linkedin: "https://www.linkedin.com/in/alexandros-liaskos-a92a46254/",
   },
   bio: "Software engineer and geosciences specialist with a BSc in Geology, undergoing MSc in GIS, years of experience in research of geohazards, satellite imagery analysis, geoinformatics and web-app development.",
 }
