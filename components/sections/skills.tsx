@@ -5,17 +5,19 @@ import { Badge } from "@/components/ui/badge"
 import { skills } from "@/lib/data"
 import { motion } from "framer-motion"
 
+import { Code, Library, Wrench } from "lucide-react"
+
 export function Skills() {
   const getCategoryIcon = (category: string) => {
     switch (category) {
-      case "Software & Applications":
-        return "🛠️"
-      case "Programming & Markup":
-        return "💻"
-      case "Frameworks & Libraries":
-        return "📚"
+      case "Web Development":
+        return <Wrench className="w-6 h-6" />
+      case "Data Science & GIS":
+        return <Code className="w-6 h-6" />
+      case "Databases":
+        return <Library className="w-6 h-6" />
       default:
-        return "🔧"
+        return <Wrench className="w-6 h-6" />
     }
   }
 

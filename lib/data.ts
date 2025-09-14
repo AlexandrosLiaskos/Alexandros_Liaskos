@@ -1,4 +1,39 @@
-import { features } from "node:process"
+export type Project = {
+  name: string;
+  highlights: string[];
+  techStack: string[];
+  featured: boolean;
+  links: {
+    type: "github" | "live" | "npm";
+    url: string;
+  }[];
+};
+
+export type Skill = {
+  name: string;
+  category: string;
+};
+
+export type Skills = {
+  [key: string]: Skill[];
+};
+
+export type Position = {
+  title: string;
+  organization: string;
+  location: string;
+  period: string;
+  status: string;
+  link?: string;
+  supervisor?: string;
+  description?: string;
+  highlights?: string[];
+};
+
+export type ExperienceCategory = {
+  category: string;
+  positions: Position[];
+};
 
 export function calculateAge(birthDate: string): number {
   const birth = new Date(birthDate)
@@ -48,200 +83,185 @@ export const education = [
   },
 ]
 
-export const experience = [
+export const experience: ExperienceCategory[] = [
   {
     category: "Research",
     positions: [
       {
         title: "EO-PERSIST Research Programme",
-        organization: "Lund University, Sweden",
-        supervisor: "Prof. George P. Petropoulos",
-        period: "Jan 2025 – May 2025",
-        status: "completed",
-        link: "https://eo-persist.eu/",
+        organization: "Lund University",
+        location: "Sweden",
+        period: "January 2025 – May 2025",
+        status: "upcoming",
+        description: "Developed CVIc, a React/TypeScript web platform to automate Coastal Vulnerability Index calculations.",
       },
       {
-        title: "Geohazards Research",
+        title: "Researcher - Software Engineer",
         organization: "National and Kapodistrian University of Athens (NKUA)",
-        supervisor: "Prof. Niki Evelpidou",
-        period: "2020 – Present",
+        location: "Athens, Greece",
+        period: "January 2020 – present",
         status: "current",
-        link: "https://github.com/AlexandrosLiaskos",
-      },
-    ],
-  },
-  {
-    category: "Freelance",
-    positions: [
-      {
-        title: "Software Developer",
-        organization: "Independent Contractor",
-        description: "Developing algorithms, CLI applications and tools using Python, JavaScript/TypeScript and Bash.",
-        period: "2021 – Present",
-        status: "current",
+        description: "Participating in projects related to Geohazards",
       },
       {
-        title: "Geospatial Analyst",
-        organization: "Independent Contractor",
-        description: "Utilizing GIS software (ArcGIS Pro, QGIS), Python/JavaScript, and satellite imagery (GEE, Copernicus) for geospatial data analysis and software development.",
-        period: "2022 – Present",
-        status: "current",
+        title: "Facing Fire Internship",
+        organization: "University of Santiago de Compostela",
+        location: "Lugo, Spain",
+        period: "23 June – 20 July 2023",
+        status: "completed",
+        description: "Service-Learning Erasmus+ Internship",
       },
       {
-        title: "Web Developer",
-        organization: "Independent Contractor",
-        description: "Developing web applications using Next.js, Typescript, ShadCN, and SQLite.",
-        period: "2024 – Present",
-        status: "current",
+        title: "Latin America in the Global Networks",
+        organization: "Universidad Autónoma de Madrid",
+        location: "Spain",
+        period: "3-9 July 2022",
+        status: "completed",
+        description: "CIVIS Blended Intensive Programme",
       }
-    ],
+    ]
   },
   {
     category: "Service Industry",
     positions: [
       {
-        title: "Assistant Waiter",
+        title: "Assistant Waiter / Commis de Rang",
         organization: "The Old Tavern of Psarras",
-        location: "Athens, Greece",
-        description: "Physically intense, dynamic, and demanding experience.",
-        period: "2018 – Present",
+        location: "Plaka, Athens, Greece",
+        period: "January 2018 – Present",
         status: "current",
-        link: "https://psaras-taverna.gr/",
+      }
+    ],
+  },
+  {
+    category: "Military Service",
+    positions: [
+      {
+        title: "Military Service",
+        organization: "Hellenic Army",
+        location: "Kalymnos, Greece",
+        period: "December 2023 – August 2024",
+        status: "completed",
       },
     ],
   },
-]
+];
 
-export const skills = {
-  "Software & Applications": [
-    { name: "ArcGIS Pro", category: "gis" },
-    { name: "QGIS", category: "gis" },
-    { name: "Google Earth Engine", category: "gis" },
-    { name: "Copernicus", category: "gis" },
-    { name: "SNAP", category: "gis" },
-    { name: "Git", category: "tools" },
-    { name: "Docker", category: "tools" },
-    { name: "Jupyter", category: "python" },
-    { name: "Google Colab", category: "python" },
-    { name: "Arch Linux", category: "systems" },
-    { name: "Ubuntu", category: "systems" },
-  ],
-  "Programming & Markup": [
-    { name: "Python", category: "python" },
-    { name: "JavaScript", category: "javascript" },
-    { name: "TypeScript", category: "javascript" },
-    { name: "Bash", category: "shell" },
-    { name: "HTML", category: "web" },
-    { name: "CSS", category: "web" },
-    { name: "Markdown", category: "markup" },
-    { name: "JSON", category: "data" },
-    { name: "LaTeX", category: "markup" },
-  ],
-  "Frameworks & Libraries": [
-    // Python Libraries
-    { name: "NumPy", category: "python" },
-    { name: "Pandas", category: "python" },
-    { name: "GDAL", category: "python" },
-    { name: "Shapely", category: "python" },
-    { name: "Rasterio", category: "python" },
-    { name: "Scikit-image", category: "python" },
-    { name: "Flask", category: "python" },
-    // JavaScript Frameworks
+export const skills: Skills = {
+  "Web Development": [
+    { name: "JavaScript/TypeScript", category: "javascript" },
     { name: "React", category: "web" },
     { name: "Next.js", category: "web" },
-    { name: "Vue.js", category: "web" },
     { name: "Node.js", category: "javascript" },
-    { name: "Leaflet", category: "javascript" },
-    { name: "Turf.js", category: "javascript" },
-    { name: "SQLite", category: "web" },
-    // CSS Frameworks
-    { name: "Tailwind CSS", category: "web" },
+    { name: "Nest.js", category: "javascript" },
+    { name: "Tailwind CSS", category: "css" },
     { name: "ShadCN", category: "web" },
   ],
-}
+  "Data Science & GIS": [
+    { name: "Python", category: "python" },
+    { name: "NumPy", category: "python" },
+    { name: "Pandas", category: "python" },
+    { name: "GDAL", category: "gis" },
+    { name: "Shapely", category: "gis" },
+    { name: "Rasterio", category: "gis" },
+    { name: "Scikit-image", category: "python" },
+    { name: "Leaflet", category: "gis" },
+    { name: "Turf.js", category: "gis" },
+    { name: "GIS", category: "gis" },
+    { name: "GEE", category: "gis" },
+    { name: "SNAP", category: "gis" },
+  ],
+  Databases: [
+    { name: "SQLite", category: "other" },
+    { name: "PostgreSQL", category: "other" },
+    { name: "IndexedDB", category: "other" },
+  ],
+  Other: [
+    { name: "Git", category: "other" },
+    { name: "Docker", category: "other" },
+    { name: "Linux", category: "other" },
+    { name: "Bash", category: "shell" },
+    { name: "Markdown", category: "other" },
+    { name: "JSON", category: "other" },
+    { name: "YAML", category: "other" },
+    { name: "LaTeX", category: "other" },
+  ],
+};
 
-export const projects = [
+export const projects: Project[] = [
   {
-    title: "AEMS",
-    description: "Automated Email Management System with AI-powered classification and data extraction from invoices/receipts. Features Gmail integration, real-time processing, and local-first storage.",
-    techStack: ["NestJS", "React", "TypeScript", "GraphQL", "OpenAI API", "Gmail API", "WebSocket"],
-    githubUrl: "https://github.com/AlexandrosLiaskos/AEMS",
-    status: "active",
+    name: "CVIc",
+    highlights: [
+      "React/TypeScript Web platform to automate Coastal Vulnerability Index calculations.",
+    ],
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Firebase"],
     featured: true,
+    links: [
+      { type: "github", url: "https://github.com/AlexandrosLiaskos/CVIc" },
+      { type: "live", url: "https://cvic-456409.web.app/" },
+    ],
   },
   {
-    title: "SatShor",
-    description: "Satellite-derived shorelines from S2L2AB08 images with subpixel precision and a TUI for acquiring the product-of-interest through CDSE's OData API.",
-    techStack: ["Python", "Sentinel-2 L2A B08", "OData API", "Marching Squares"],
-    githubUrl: "https://github.com/AlexandrosLiaskos/SatShor",
-    status: "active",
-    featured: "true",
-  },
-  {
-    title: "Chilling-Vibes",
-    description: "Python/PyAutoGUI automation tool to bridge RooCode with Google AI Studio.",
-    techStack: ["Python", "PyAutoGUI", "OCR", "Automation"],
-    githubUrl: "https://github.com/AlexandrosLiaskos/Chilling-Vibes",
-    status: "active",
-    featured:  "true",
-  },
-  {
-    title: "CVIc",
-    description: "React/TypeScript Web platform to automate Coastal Vulnerability Index calculations.",
-    techStack: ["React", "TypeScript", "Leaflet", "Turf.js", "TailwindCSS", "Firebase"],
-    githubUrl: "https://github.com/AlexandrosLiaskos/CVIc",
-    liveUrl: "https://cvic-456409.web.app/",
-    status: "active",
+    name: "SatShor",
+    highlights: [
+      "Satellite-derived shorelines from S2L2AB08 images with subpixel precision and a TUI for acquiring the product-of-interest through CDSE's OData API.",
+    ],
+    techStack: ["Python", "GDAL", "NumPy", "Rasterio"],
     featured: true,
+    links: [{ type: "github", url: "https://github.com/AlexandrosLiaskos/SatShor" }],
   },
   {
-    title: "Obsidian Web Scraper",
-    description: "NPM/MCP tools to scrape web content via Readability & Turndown.",
-    techStack: ["Node.js", "JavaScript", "CLI", "Markdown"],
-    githubUrl: "https://github.com/AlexandrosLiaskos/obsidian-scraper",
-    npmUrl: "https://www.npmjs.com/package/obsidian-web-scraper",
-    status: "active",
+    name: "Chilling-Vibes",
+    highlights: [
+      "Python/PyAutoGUI automation tool to bridge RooCode with Google AI Studio.",
+    ],
+    techStack: ["Python", "PyAutoGUI"],
     featured: true,
+    links: [{ type: "github", url: "https://github.com/AlexandrosLiaskos/Chilling-Vibes" }],
   },
   {
-    title: "Awesome Wallpapers",
-    description: "Vue/TailwindCSS web app for browsing/searching/downloading wallpapers.",
-    techStack: ["Vue.js", "TailwindCSS", "JSON"],
-    githubUrl: "https://github.com/AlexandrosLiaskos/Awesome_Wallpapers",
-    liveUrl: "https://alexandrosliaskos.github.io/Awesome_Wallpapers/",
-    status: "active",
+    name: "Obsidian Web Scraper",
+    highlights: ["NPM/MCP tools to scrape web content via Readability & Turndown."],
+    techStack: ["TypeScript", "Node.js", "Readability.js", "Turndown.js"],
+    featured: false,
+    links: [
+      { type: "github", url: "https://github.com/AlexandrosLiaskos/obsidian-scraper" },
+      { type: "npm", url: "https://www.npmjs.com/package/obsidian-web-scraper" },
+    ],
   },
   {
-    title: "PyTutor",
-    description: "Python/Rich TUI to teach Python fundamentals.",
-    techStack: ["Python", "TUI", "Education"],
-    githubUrl: "https://github.com/AlexandrosLiaskos/PyTutor",
-    status: "active",
+    name: "Awesome Wallpapers",
+    highlights: [
+      "Vue/TailwindCSS web app for browsing/searching/downloading wallpapers.",
+    ],
+    techStack: ["Vue.js", "Tailwind CSS"],
+    featured: false,
+    links: [
+      {
+        type: "github",
+        url: "https://github.com/AlexandrosLiaskos/Awesome_Wallpapers",
+      },
+      {
+        type: "live",
+        url: "https://alexandrosliaskos.github.io/Awesome_Wallpapers/",
+      },
+    ],
   },
   {
-    title: "lazyls",
-    description: "Go/Gocui lazy-loaded terminal file browser.",
-    techStack: ["Go", "TUI", "Git"],
-    githubUrl: "https://github.com/AlexandrosLiaskos/lazyls",
-    status: "active",
+    name: "PyTutor",
+    highlights: ["Python/Rich TUI to teach Python fundamentals."],
+    techStack: ["Python", "Rich"],
+    featured: false,
+    links: [{ type: "github", url: "https://github.com/AlexandrosLiaskos/PyTutor" }],
   },
   {
-    title: "PyAnalysis",
-    description: "Python CLI tool to analyze Python code structure using Abstract Syntax Trees (AST).",
-    techStack: ["Python", "AST", "CLI"],
-    githubUrl: "https://github.com/AlexandrosLiaskos/PyAnalysis",
-    status: "active",
+    name: "lazyls",
+    highlights: ["Go/Gocui lazy-loaded terminal file browser."],
+    techStack: ["Go", "Gocui"],
+    featured: false,
+    links: [{ type: "github", url: "https://github.com/AlexandrosLiaskos/lazyls" }],
   },
-  {
-    title: "JsonAnalysis",
-    description: "Python CLI tool to analyze JSON file structure, data types, and statistics.",
-    techStack: ["Python", "JSON", "CLI"],
-    githubUrl: "https://github.com/AlexandrosLiaskos/JsonAnalysis",
-    status: "active",
-  }
-
-
-]
+];
 
 export const publications = [
   {
@@ -277,11 +297,60 @@ export const publications = [
   },
 ]
 
-export const languages = [
-  { name: "Greek", level: "Native" },
-  { name: "English", level: "Fluent (IELTS 8.0)", certificate: "https://github.com/AlexandrosLiaskos/Certificates/blob/6a51de5808a971dbefa7cde29dafedf1e2a9c8d6/Languages/IELTS_Test_Report_Form_LIASKOS.pdf" },
-  { name: "Spanish", level: "Proficient (B2)" },
+export const volunteering = [
+  {
+    title: "Volunteer Firefighter",
+    organization: "12th Fire Station of Athens",
+    period: "Feb 2023 – Present",
+    status: "current",
+  },
+  {
+    title: "Improving the life of seniors",
+    organization: "Mission Anthropos",
+    period: "Oct 2022 – Present",
+    status: "current",
+  },
 ]
+
+export const conferences = [
+  {
+    title: "IAG Regional Conference on Geomorphology",
+    organization: "International Association of Geomorphologists (IAG)",
+    location: "Timișoara, Romania",
+    date: "16-18 Sep 2025",
+    status: "upcoming",
+  },
+  {
+    title: "16th International Congress of GSG",
+    organization: "Geological Society of Greece",
+    location: "University of Patras, Patras, Greece",
+    date: "17-19 Oct 2022",
+    certificate: "https://github.com/AlexandrosLiaskos/Certificates/blob/86006558b5862f825b12a8ef5a642aef232f2906/Conferences/GSG_2022_Liaskos.pdf",
+  },
+  {
+    title: "15th International Congress of GSG",
+    organization: "Geological Society of Greece",
+    location: "Harokopio University, Athens, Greece",
+    date: "22-24 May 2019",
+    certificate: "https://github.com/AlexandrosLiaskos/Certificates/blob/86006558b5862f825b12a8ef5a642aef232f2906/Conferences/GSG_2019_Liaskos.pdf",
+  },
+]
+
+export const languages = [
+  {
+    language: "Greek",
+    level: "Native",
+  },
+  {
+    language: "English",
+    level: "Fluent (IELTS 8.0)",
+    certificate: "https://github.com/AlexandrosLiaskos/Certificates/blob/6a51de5808a971dbefa7cde29dafedf1e2a9c8d6/Languages/IELTS_Test_Report_Form_LIASKOS.pdf",
+  },
+  {
+    language: "Spanish",
+    level: "Proficient",
+  },
+];
 
 export const courses = [
   {
@@ -325,114 +394,5 @@ export const courses = [
     provider: "Mathesis - Crete University Press",
     category: "History",
     certificate: "https://mathesis.cup.gr/certificates/3abc090c8a6c4b4c9149f5866b56e73a?lang=en",
-  },
-  {
-    title: "Man Facing Himself (Part A & B)",
-    provider: "Mathesis - Crete University Press",
-    category: "History",
-    certificate: "https://mathesis.cup.gr/certificates/80cb295493ec46de8060dbd05a1023c6?lang=en",
-  },
-  {
-    title: "Plato",
-    provider: "Mathesis - Crete University Press",
-    category: "Philosophy",
-    certificate: "https://mathesis.cup.gr/certificates/ebc2d0ea141d459e9164f5f67681464f?lang=en",
-  },
-  {
-    title: "Justice",
-    provider: "HarvardX on edX",
-    category: "Philosophy/Ethics",
-    certificate: "https://courses.edx.org/certificates/a81b1ef3acc541b69fb0261aebdfaebe",
-  },
-]
-
-export const international = [
-  {
-    title: "EO-PERSIST Research Programme",
-    organization: "Lund University",
-    location: "Sweden",
-    period: "Jan 2025 – May 2025",
-    supervisor: "Prof. George P. Petropoulos",
-    status: "completed",
-  },
-  {
-    title: "Facing Fire Internship",
-    organization: "University of Santiago de Compostela",
-    location: "Lugo, Spain",
-    period: "23 June – 20 July 2023",
-    program: "Erasmus+ Internship",
-    certificate: "Available on GitHub",
-  },
-  {
-    title: "Latin America in the Global Networks",
-    organization: "Universidad Autónoma de Madrid",
-    location: "Spain",
-    period: "3-9 July 2022",
-    program: "CIVIS Blended Intensive Programme",
-    certificate: "Digital certificate available",
-  },
-  {
-    title: "Culture on My Camera",
-    organization: "Erasmus+ Youth Exchange",
-    location: "Denizli, Turkey",
-    period: "17-24 July 2022",
-    certificate: "Available on GitHub",
-  },
-]
-
-export const volunteering = [
-  {
-    title: "Volunteer Firefighter",
-    organization: "12th Fire Station of Athens",
-    period: "Feb 2023 – Present",
-    status: "current",
-    certificate: "Available on GitHub",
-  },
-  {
-    title: "Student Group Coordinator",
-    organization: "Mission Anthropos",
-    period: "Oct 2022 – Present",
-    status: "current",
-    note: "International presence organization",
-  },
-]
-
-export const conferences = [
-  {
-    title: "IAG Regional Conference on Geomorphology",
-    organization: "International Association of Geomorphologists (IAG)",
-    location: "Timișoara, Romania",
-    date: "16-18 Sep 2025",
-    status: "upcoming",
-  },
-  {
-    title: "16th International Congress of GSG",
-    organization: "Geological Society of Greece",
-    location: "University of Patras, Patras, Greece",
-    date: "17-19 Oct 2022",
-    certificate: "Available on GitHub",
-  },
-  {
-    title: "15th International Congress of GSG",
-    organization: "Geological Society of Greece",
-    location: "Harokopio University, Athens, Greece",
-    date: "22-24 May 2019",
-    certificate: "Available on GitHub",
-  },
-]
-
-export const military = [
-  {
-    title: "Military Service",
-    location: "Kalymnos, Greece",
-    period: "Dec 2023 – Aug 2024",
-    duration: "9 months",
-    certificate: "Available on GitHub",
-  },
-  {
-    title: "Military Training",
-    location: "Kalamata, Greece",
-    period: "Nov 2023",
-    certificate: "Available on GitHub",
-  },
+  }
 ]

@@ -11,6 +11,10 @@ export function Projects() {
   const featuredProjects = projects.filter(project => project.featured)
   const otherProjects = projects.filter(project => !project.featured)
 
+  const getLink = (project: (typeof projects)[0], type: "github" | "live" | "npm") => {
+    return project.links.find(link => link.type === type)?.url
+  }
+
   return (
     <section id="projects" className="section-container">
       <div className="space-y-12">
@@ -32,7 +36,7 @@ export function Projects() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {featuredProjects.map((project, index) => (
             <motion.div
-              key={project.title}
+              key={project.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -43,18 +47,12 @@ export function Projects() {
                   <div className="flex items-start justify-between">
                     <div className="space-y-2 flex-1">
                       <CardTitle className="text-xl group-hover:text-primary transition-colors">
-                        {project.title}
+                        {project.name}
                       </CardTitle>
                       <CardDescription className="text-base">
-                        {project.description}
+                        {project.highlights.join(" ")}
                       </CardDescription>
                     </div>
-                    {project.status === 'active' && (
-                      <Badge variant="cyber" className="ml-4">
-                        <Star className="w-3 h-3 mr-1" />
-                        Active
-                      </Badge>
-                    )}
                   </div>
                 </CardHeader>
                 
@@ -72,7 +70,7 @@ export function Projects() {
                   <div className="flex gap-3 pt-2">
                     <Button variant="outline" size="sm" asChild>
                       <a 
-                        href={project.githubUrl} 
+                        href={getLink(project, "github")} 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="group/btn"
@@ -82,10 +80,10 @@ export function Projects() {
                       </a>
                     </Button>
                     
-                    {project.liveUrl && (
+                    {getLink(project, "live") && (
                       <Button variant="outline" size="sm" asChild>
                         <a 
-                          href={project.liveUrl} 
+                          href={getLink(project, "live")} 
                           target="_blank" 
                           rel="noopener noreferrer"
                           className="group/btn"
@@ -96,10 +94,10 @@ export function Projects() {
                       </Button>
                     )}
                     
-                    {project.npmUrl && (
+                    {getLink(project, "npm") && (
                       <Button variant="outline" size="sm" asChild>
                         <a 
-                          href={project.npmUrl} 
+                          href={getLink(project, "npm")} 
                           target="_blank" 
                           rel="noopener noreferrer"
                           className="group/btn"
@@ -131,7 +129,7 @@ export function Projects() {
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
             {otherProjects.map((project, index) => (
               <motion.div
-                key={project.title}
+                key={project.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
@@ -140,10 +138,10 @@ export function Projects() {
                 <Card className="h-full glass-morphism hover:bg-card/80 transition-all duration-300 group">
                   <CardHeader className="pb-3">
                     <CardTitle className="text-lg group-hover:text-primary transition-colors">
-                      {project.title}
+                      {project.name}
                     </CardTitle>
                     <CardDescription className="text-sm line-clamp-2">
-                      {project.description}
+                      {project.highlights.join(" ")}
                     </CardDescription>
                   </CardHeader>
                   
@@ -166,7 +164,7 @@ export function Projects() {
                     <div className="flex gap-2">
                       <Button variant="ghost" size="sm" asChild>
                         <a 
-                          href={project.githubUrl} 
+                          href={getLink(project, "github")} 
                           target="_blank" 
                           rel="noopener noreferrer"
                         >
@@ -174,10 +172,10 @@ export function Projects() {
                         </a>
                       </Button>
                       
-                      {project.liveUrl && (
+                      {getLink(project, "live") && (
                         <Button variant="ghost" size="sm" asChild>
                           <a 
-                            href={project.liveUrl} 
+                            href={getLink(project, "live")} 
                             target="_blank" 
                             rel="noopener noreferrer"
                           >
