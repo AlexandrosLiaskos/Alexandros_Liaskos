@@ -69,8 +69,8 @@ export function Contact() {
               </CardHeader>
               <CardContent className="space-y-3">
                 {languages.map((language) => (
-                  <div key={language.name} className="flex items-center justify-between">
-                    <span className="text-sm font-medium">{language.name}</span>
+                  <div key={language.language} className="flex items-center justify-between">
+                    <span className="text-sm font-medium">{language.language}</span>
                     <Badge variant="outline" className="text-xs">
                       {language.level}
                     </Badge>
